@@ -1,0 +1,7 @@
+<div class="form-group" ng-class="{ 'has-error' : vm.form[vm.fieldId].$invalid && vm.submitted }">
+    <label>{{vm.label}}:</label>
+    <select name="{{vm.fieldId}}" class="form-control" ng-model="vm.model[vm.fieldId]" ng-required="vm.required" ng-options="option.value as option.text for option in vm.data" ng-change="vm.onchange">
+        <option value=""></option>
+    </select>
+    <p ng-show="vm.form[vm.fieldId].$error.required && vm.submitted " class="help-block">{{vm.label}} is required.</p>
+</div>

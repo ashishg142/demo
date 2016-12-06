@@ -1,0 +1,17 @@
+.search_btn {
+    position: absolute;
+    right: 0;
+    top: -21px;
+}
+.search_box {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+}
+.search_box .form-group{
+    margin-bottom: 0;
+}
+.footer_search_form .search_btn {
+    top: 0;
+}

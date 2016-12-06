@@ -1,0 +1,48 @@
+<div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+</div>
+<h2>API Token</h2>
+<hr />
+<form id="tokenForm" name="tokenForm" class="form" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <select-field select-field-form="tokenForm" select-field-id="appid" select-field-label="Application" select-field-data="tc.apps" select-field-submitted="tc.submitted" select-field-model="tc.token" select-field-required="true"></select-field>
+            <text-field text-field-form="tokenForm" text-field-id="app_priv_key" text-field-label="Private Key" text-field-submitted="tc.submitted" text-field-model="tc.token" text-field-required="true" text-field-minlength="tc.minLength" text-field-maxlength="tc.maxLength"></text-field>
+        </div>
+        <div class="col-md-6">
+            <select-field select-field-form="tokenForm" select-field-id="to_appid" select-field-label="Connects With App" select-field-data="tc.apps" select-field-submitted="tc.submitted" select-field-model="tc.token" select-field-required="true"></select-field>
+            <text-field text-field-form="tokenForm" text-field-id="app_pub_key" text-field-label="Public Key" text-field-submitted="tc.submitted" text-field-model="tc.token" text-field-required="true" text-field-minlength="8"></text-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <select-field select-field-form="tokenForm" select-field-id="app_key_method" select-field-label="Key Method" select-field-data="tc.keyMethods" select-field-submitted="tc.submitted" select-field-model="tc.token" select-field-required="false"></select-field>
+        </div>
+        <div class="col-md-6">
+            <select-field select-field-form="tokenForm" select-field-id="site_configid" select-field-label="Site Config" select-field-data="tc.siteConfigs" select-field-submitted="tc.submitted" select-field-model="tc.token" select-field-required="false"></select-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>API Token:</label><br />
+                <span class="break-word">{{tc.token.apiToken}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>URL Parameters:</label><br />
+                <span class="break-word">?appId={{tc.token.appid}}&apiToken={{tc.token.apiToken}}</span>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 col-md-push-6 action-buttons">
+            <button type="submit" class="btn btn-primary pull-right" ng-click="tc.save(tokenForm.$valid, tokenForm)">Save</button>
+            <button class="btn btn-default pull-right" ng-click="tc.cancel()">Cancel</button>
+        </div>
+    </div>
+</form>

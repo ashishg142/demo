@@ -1,0 +1,29 @@
+
+
+
+.demo_wrapper{ background-image: url('../assets/images/footerimage.jpg');
+ background-position: right bottom; background-repeat: no-repeat;}
+.bredcrumbs_wrapper .breadcrumb{ margin-bottom: 0; background-color: transparent}
+.title_wrapper{ text-align: center; background-color: $title-bg; color: $title-text}
+.title_block{ line-height: 150px}
+.title_block h1 {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+.content_wrapper {
+    padding-top: 20px;
+}
+.plan_info ul {
+    margin: 0;
+}
+.plan_info ul li{ margin: 10px 0;}
+.plan_info ul li a{ display: inline-block; padding-right: 20px}
+.plan_info ul li a h2{ display: inline-block; vertical-align: middle; margin: 0; padding: 0;}
+.plan_info ul li  span {
+    color: $title-text;
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: bottom;
+}
+.plan_info{ margin-bottom: 20px}

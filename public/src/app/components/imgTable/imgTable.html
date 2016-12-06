@@ -1,0 +1,104 @@
+<div class="img-table">
+    <div class="img-table-options">
+        <div class="col-sm-12 col-md-12">
+            <div class="btn-group pull-right" uib-dropdown is-open="status.isopen">
+                <button id="refresh-button" type="button" class="btn btn-default" ng-click="vm.filter()" ng-disabled="disabled">
+                    <span class="fa fa-refresh"></span>
+                </button>
+                <button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+                   Columns <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" ng-repeat="column in vm.tableOptions.columns track by $index">
+                        <a href="#" ng-click="vm.toggleColumn(column)">
+                            <span class="fa" ng-class="{'fa-check-circle-o': !column.hidden, 'fa-circle-o': column.hidden}"></span> {{column.title}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped table-responsive">
+        <thead>
+            <tr>
+                <th ng-if="vm.tableOptions.bulkSelections.length > 0">
+                    <input type="checkbox" name="checkAll" ng-model="vm.checked" ng-click="vm.checkAll()"/>
+                </th>
+                <th ng-repeat="column in vm.tableOptions.columns track by $index" ng-click="vm.sort(column)" ng-if="!column.hidden">
+                    {{column.title}}
+                    <i ng-if="(vm.tableOptions.sortingEnabled && !column.hasOwnProperty('sort')) || (column.hasOwnProperty('sort') && column.sort)" class="fa" ng-class="{'fa-sort-asc': vm.sortOrder=='asc' && vm.sortColumn==column.id, 'fa-sort-desc': vm.sortOrder=='desc' && vm.sortColumn==column.id, 'fa-sort': true}" aria-hidden="true"></i>
+                </th>
+            </tr>
+            <tr ng-if="vm.tableOptions.filtersEnabled">
+                <th ng-if="vm.tableOptions.bulkSelections.length > 0"></th>
+                <th ng-repeat="column in vm.tableOptions.columns track by $index" ng-if="!column.hidden" data-title="{{column.title}}">
+                    <div class="img-table-filter" ng-if="column.filter">
+                        <div class="img-table-filter-text" ng-if="column.filter=='text'">
+                            <input type="text" class="form-control" ng-model="column.filterValue" ng-keyup="vm.filter(column)" />
+                        </div>
+                        <div class="img-table-filter-select" ng-if="column.filter=='select'">
+                            <select class="form-control" ng-model="column.filterValue" ng-change="vm.filter(column)">
+                                <option value=""></option>
+                                <option ng-repeat="option in column.data" value="{{option}}">{{option}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in vm.tableData track by $index" ng-click="vm.tableOptions.rowClick(row)" class="{{row.class}}">
+                <td ng-if="vm.tableOptions.bulkSelections.length > 0" onclick="event.stopPropagation();">
+                    <input type="checkbox" name="row{{$index}}" ng-model="row.checked" />
+                </td>
+                <td ng-repeat="column in vm.tableOptions.columns track by $index" ng-if="!column.hidden">
+                    <span uib-tooltip="{{row[column.id]}}">{{row[column.id]}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-sm-3 col-md-3 bulk-selections">
+            <div class="form-inline" ng-if="vm.tableOptions.bulkSelections">
+                <select name="withSelections" class="form-control" ng-model="vm.selection">
+                    <optgroup label="Bulk Options">
+                        <option ng-repeat="selection in vm.tableOptions.bulkSelections" ng-value="selection.text">
+                            {{selection.text}}
+                        </option>
+                    </optgroup>
+                </select>
+                <button class="btn btn-primary" ng-click="vm.go()">GO</button>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 text-center">
+            <nav aria-label="Page Navigation" ng-if="vm.tableOptions.paginationEnabled">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous" ng-click="vm.previousPage()">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <select name="page" ng-model="vm.page" ng-options="page for page in vm.pages"></select>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Next" ng-click="vm.nextPage()">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-sm-3 ol-md-3 pagination-limit" ng-if="vm.tableOptions.paginationEnabled">
+            <div class="form-inline">
+                <select name="limit" class="form-control pull-right" ng-model="vm.tableOptions.pagination.limit">
+                    <optgroup label="Limit">
+                        <option ng-repeat="option in vm.paginationLimits" ng-value="option.value">{{option.text}}</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

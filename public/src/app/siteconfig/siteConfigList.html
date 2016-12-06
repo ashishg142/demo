@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h1>Site Config</h1>
+    <hr>
+    <img-table table-data="siteConfigList.entries" table-options="siteConfigList.tableOptions"></img-table>
+
+    <side-view ng-class="siteConfigList.sideViewStateClass" show="siteConfigList.showSideView"></side-view>
+
+    <div class="fixed-action-btn" ng-click="siteConfigList.showEntry()">
+        <a>
+            <i class="glyphicon glyphicon-plus"></i>
+        </a>
+    </div>
+</div>

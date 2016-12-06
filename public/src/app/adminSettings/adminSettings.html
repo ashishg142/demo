@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h1>Admin Settings</h1>
+    <hr>
+    <img-table table-data="adminSettings.adminSettings" table-options="adminSettings.tableOptions"></img-table>
+
+    <side-view ng-class="adminSettings.sideViewStateClass" show="adminSettings.showSideView" toggle-show="adminSettings.showWebpageActionType()"></side-view>
+
+    <div class="fixed-action-btn" ng-click="adminSettings.showAdminSetting()">
+        <a>
+            <i class="glyphicon glyphicon-plus"></i>
+        </a>
+    </div>
+</div>

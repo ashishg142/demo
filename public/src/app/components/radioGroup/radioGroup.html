@@ -1,0 +1,9 @@
+<div class="form-group" ng-class="{ 'has-error' : vm.form[vm.fieldId].$invalid && vm.submitted}">
+    <label>{{vm.label}}:</label>
+    <div ng-repeat="button in vm.data">
+        <label>{{button.text}}
+            <input type="radio" ng-value="button.value" name="{{button.name}}" ng-model="vm.model[vm.fieldId]"/>
+        </label>
+    </div>
+    <p ng-show="vm.form[vm.fieldId].$invalid && vm.submitted " class="help-block">{{vm.label}} is required.</p>
+</div>

@@ -1,0 +1,34 @@
+<h2>Site Config Entry</h2>
+<hr />
+<form id="siteConfigEntryForm" name="siteConfigEntryForm" class="form" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="primary_domain_nameid" text-field-label="Primary Domain Name" text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="true"></text-field>
+        </div>
+        <div class="col-md-6">
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="site_path" text-field-label="Site Path"  text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="true"></text-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="tbl_prefix" text-field-label="Table Prefix"  text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="false"></text-field>
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="default_admin_rows_per_page" text-field-label="Default Admin Rows Per Page" text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="false"></text-field>
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="default_public_rows_per_page" text-field-label="Default Public Rows Per Page" text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="false"></text-field>
+            <select-field select-field-form="siteConfigEntryForm" select-field-id="inactive" select-field-label="Active Status" select-field-data="siteConfig.statuses" select-field-submitted="siteConfig.submitted" select-field-model="siteConfig.entry" select-field-required="false"></select-field>
+        </div>
+        <div class="col-md-6">
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="default_img_path" text-field-label="Default Image Path" text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="false"></text-field>
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="default_js_path" text-field-label="Default JS Path" text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="false"></text-field>
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="default_css_path" text-field-label="Default CSS Path" text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="false"></text-field>
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="default_video_path" text-field-label="Default Video Path" text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="false"></text-field>
+            <text-field text-field-form="siteConfigEntryForm" text-field-id="default_misc_path" text-field-label="Default Misc Path" text-field-submitted="siteConfig.submitted" text-field-model="siteConfig.entry" text-field-required="false"></text-field>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 col-md-push-6 action-buttons">
+            <button type="submit" class="btn btn-primary pull-right" ng-click="siteConfig.save(siteConfigEntryForm.$valid)">Save</button>
+            <button class="btn btn-default pull-right" ng-click="siteConfig.cancel()">Cancel</button>
+        </div>
+    </div>
+</form>

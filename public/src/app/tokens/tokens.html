@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h1>API Tokens</h1>
+    <hr>
+    <img-table table-data="tokens.tokens" table-options="tokens.tableOptions"></img-table>
+
+    <side-view ng-class="tokens.sideViewStateClass" show="tokens.showSideView" toggle-show="tokens.toggleTokenForm()"></side-view>
+
+    <div class="fixed-action-btn" ng-click="tokens.toggleTokenForm()">
+        <a>
+            <i class="glyphicon glyphicon-plus"></i>
+        </a>
+    </div>
+</div>

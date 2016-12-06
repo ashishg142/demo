@@ -1,0 +1,46 @@
+<h2>Action</h2>
+<hr />
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <label>Description:</label>
+            <p>
+                <span ng-show="ac.action.url_visit.visitorid && !ac.action.url_visit.userid">The visitor </span>
+                <span ng-show="ac.action.url_visit.userid != null">The user: <b>{{ac.action['url_visit.user.user_display_name']}}</b> </span>
+                performed the <b>{{ac.action.webpage_action_type.webpage_action_type}}</b> action on the following element:<br /><br />
+                <a href="#" ng-click="ac.findElement(ac.action.action_object);">{{ac.action.action_object}}</a>
+            </p>
+        </div>
+        <div class="form-group">
+            <label>Label:</label>
+            <p>{{ac.action.action_object_lbl}}</p>
+        </div>
+        <div class="form-group">
+            <label>URL:</label>
+            <p><a href="{{ac.action.url_visit.url.url}}" target="_blank">{{ac.action.url_visit.url.url}}</a></p>
+        </div>
+        <div class="form-group">
+            <label>Original Value:</label>
+            <p>{{ac.action.action_data_orig}}{{ac.action.action_data_orig_ext}}</p>
+        </div>
+        <div class="form-group">
+            <label>New Value:</label>
+            <p>{{ac.action.action_data}}{{ac.action.action_data_ext}}</p>
+        </div>
+        <div class="form-group">
+            <label>Added:</label>
+            <p>{{ac.action.added}}</p>
+        </div>
+        <div class="form-group">
+            <label>Updated:</label>
+            <p>{{ac.action.updated}}</p>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-6 col-md-push-6 action-buttons">
+        <button class="btn btn-primary pull-right" ng-if="ac.action.allowRollback" ng-click="ac.rollback()">Rollback</button>
+        <button class="btn btn-default pull-right" ng-click="ac.cancel()">Cancel</button>
+    </div>
+</div>

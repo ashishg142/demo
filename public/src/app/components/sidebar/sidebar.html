@@ -1,0 +1,25 @@
+<nav>
+  <div class="logo-container">
+    <span class="logo" alt="Integrity Media Group" title="Integrity Media Group"></span>
+  </div>
+  <ul>
+    <li ng-repeat="item in sc.menu" class="{{item.state}}" ng-click="sc.setActiveMenu(item)" alt="{{item.text}}" title="{{item.text}}">
+      <a href="#" ng-click="(item.items) ? item.showItems=!item.showItems : null">
+        <i class="{{item.icon}}" alt="{{item.text}}" title="{{item.text}}"></i> <span class="text">{{item.text}}</span>
+        <i ng-if="item.items && item.showItems" class="fa fa-arrow-down"></i>
+        <i ng-if="item.items && !item.showItems" class="fa fa-arrow-left"></i>
+      </a>
+      <i class="glyphicon glyphicon-triangle-left"></i>
+      <ul class="sub-item-list" ng-if="item.items && item.showItems">
+        <li ng-repeat="subItem in item.items" class="{{subItem.state}}" ng-click="sc.setActiveMenu(item, subItem)">
+          <a href="{{subItem.link}}"><span class="glyphicon {{subItem.icon}}" alt="{{subItem.text}}"
+                                           title="{{subItem.text}}"></span> <span
+                  class="text">{{subItem.text}}</span></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="collapser">
+    <span class="fa" ng-class="{'fa-chevron-circle-left': !sc.collapsed, 'fa-chevron-circle-right': sc.collapsed}" ng-click="sc.toggleSidebar();"></span>
+  </div>
+</nav>

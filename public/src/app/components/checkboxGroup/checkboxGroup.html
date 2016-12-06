@@ -1,0 +1,8 @@
+<div class="form-group" ng-class="{ 'has-error' : vm.form[vm.fieldId].$invalid && vm.submitted}">
+    <div ng-repeat="checkbox in vm.data">
+        <label>{{checkbox.text}}
+            <input type="checkbox" ng-value="checkbox.value" ng-model="vm.model[vm.fieldId]"/>
+        </label>
+    </div>
+    <p ng-show="vm.form[vm.fieldId].$invalid && vm.submitted " class="help-block">{{vm.label}} is required.</p>
+</div>

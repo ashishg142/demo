@@ -1,0 +1,27 @@
+<h2>Warranty Policy</h2>
+<hr/>
+<form id="warrantyPolicyForm" name="warrantyPolicyForm" class="form" novalidate>
+        <div class="row">
+            <div class="col-md-6">
+                <text-field text-field-form="warrantyPolicyForm" text-field-id="warranty_policy" text-field-label="Warranty Policy" text-field-submitted="wp.submitted"
+                            text-field-model="wp.warrantyPolicy"
+                            text-field-required="true" text-field-minlength="wp.minLength" text-field-maxlength="wp.maxLength"></text-field>
+                <tiny-mce tiny-mce-form="warrantyPolicyForm" tiny-mce-id="warranty_policy_desc" tiny-mce-label="Warranty Policy Description" tiny-mce-submitted="wp.submitted" tiny-mce-model="wp.warrantyPolicy" tiny-mce-required="true"></tiny-mce>
+            </div>
+            <div class="col-md-6">
+                <number-field number-field-form="warrantyPolicyForm" number-field-id="warranty_months" number-field-label="Warranty Months" number-field-submitted="wp.submitted"
+                            number-field-model="wp.warrantyPolicy"
+                            text-field-required="true"></number-field>
+                <radio-group radio-group-form="warrantyPolicyForm" radio-group-id="inactive" radio-group-label="Inactive" radio-group-submitted="wp.submitted" radio-group-model="wp.warrantyPolicy"
+                             radio-group-required="true" radio-group-data="wp.inactiveButtons"></radio-group>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-6 col-md-push-6 action-buttons">
+                <button type="submit" class="btn btn-primary pull-right" ng-click="wp.save(warrantyPolicyForm.$valid)">Save</button>
+                <button class="btn btn-default pull-right" ng-click="wp.cancel()">Cancel</button>
+            </div>
+        </div>
+    <admin-section-manager></admin-section-manager>
+</form>

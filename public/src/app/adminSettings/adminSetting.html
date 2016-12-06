@@ -1,0 +1,25 @@
+<h2>Admin Setting</h2>
+<hr />
+<form id="adminSettingForm" name="adminSettingForm" class="form" novalidate>
+    <div class="row">
+        <div class="col-md-12">
+            <text-field text-field-form="adminSettingForm" text-field-id="admin_setting" text-field-label="Admin Setting" text-field-submitted="adminSetting.submitted" text-field-model="adminSetting.adminSetting" text-field-required="true"></text-field>
+        </div>
+        <div class="col-md-12">
+            <text-area text-area-form="adminSettingForm" text-area-id="admin_setting_val" text-area-label="Admin Setting Value" text-area-submitted="adminSetting.submitted" text-area-model="adminSetting.adminSetting"></text-area>
+        </div>
+        <div class="col-md-12">
+            <select-field select-field-form="adminSettingForm" select-field-id="admin_setting_typeid" select-field-label="Admin Setting Type" select-field-data="adminSetting.types" select-field-submitted="adminSetting.submitted" select-field-model="adminSetting.adminSetting" select-field-required="true"></select-field>
+        </div>
+        <div class="col-md-12">
+            <select-field select-field-form="adminSettingForm" select-field-id="inactive" select-field-label="Inactive" select-field-data="adminSetting.inactive" select-field-submitted="adminSetting.submitted" select-field-model="adminSetting.adminSetting" select-field-required="false"></select-field>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 col-md-push-6 action-buttons">
+            <button type="submit" class="btn btn-primary pull-right" ng-click="adminSetting.save(adminSettingForm.$valid)">Save</button>
+            <button class="btn btn-default pull-right" ng-click="adminSetting.cancel()">Cancel</button>
+        </div>
+    </div>
+</form>

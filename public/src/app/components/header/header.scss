@@ -1,0 +1,38 @@
+
+.header_top{background-color: $header-bg; line-height: 75px;}
+.header_sec{  height: 120px; width: 100%; position: fixed; left: 0; top: 0;}
+.social_links ul{ margin: 0; padding: 0; text-align: right}
+.social_links ul li{
+    display: inline-block;
+    vertical-align: middle;
+}
+.contact_no{ color: $white; text-align: center}
+.social_links ul li a{ display: block; width: 36px; height: 36px; border-radius: 50%; text-align: center; line-height: 36px; font-size: 24px; color: #fff;}
+.social_links ul li:nth-child(1) a{
+    background-color: $fb-bg;
+}
+.social_links ul li:nth-child(2) a{
+    background-color: $insta-bg;
+}
+.social_links ul li:nth-child(3) a{
+    background-color: $pin-bg;
+}
+.social_links ul li:nth-child(4) a{
+    background-color: $google-bg;
+}
+.social_links ul li:nth-child(5) a{
+    background-color: $tw-bg;
+}
+.social_links ul li:nth-child(6) a{
+    background-color: $yt-bg;
+}
+
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main_nav{ background-color: $nav-bg}
+.main_nav ul li a { color: $white; padding-top:12px; padding-bottom: 13px}
+.main_nav ul li a:hover{ background-color: $nav-bg-hover; color: $black}

@@ -1,0 +1,22 @@
+<h2>Action Type Entry</h2>
+<hr />
+<form id="webpageActionTypeForm" name="webpageActionTypeForm" class="form" novalidate>
+    <div class="row">
+        <div class="col-md-12">
+            <text-field text-field-form="webpageActionTypeForm" text-field-id="webpage_action_type" text-field-label="Action Type" text-field-submitted="webpageActionType.submitted" text-field-model="webpageActionType.webpageActionType" text-field-required="true"></text-field>
+        </div>
+        <div class="col-md-12">
+            <text-area text-area-form="webpageActionTypeForm" text-area-id="webpage_action_type_desc" text-area-label="Action Type Desc" text-area-submitted="webpageActionType.submitted" text-area-model="webpageActionType.webpageActionType"></text-area>
+        </div>
+        <div class="col-md-12">
+            <select-field select-field-form="webpageActionTypeForm" select-field-id="inactive" select-field-label="Inactive" select-field-data="webpageActionType.inactive" select-field-submitted="webpageActionType.submitted" select-field-model="webpageActionType.webpageActionType" select-field-required="false"></select-field>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 col-md-push-6 action-buttons">
+            <button type="submit" class="btn btn-primary pull-right" ng-click="webpageActionType.save(webpageActionTypeForm.$valid)">Save</button>
+            <button class="btn btn-default pull-right" ng-click="webpageActionType.cancel()">Cancel</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,38 @@
+<div id="demo" class="main_wrapper demo_wrapper">
+  <div class="bredcrumbs_wrapper">
+    <div class="container">
+      <div class="row">
+        <ol class="breadcrumb">
+          <li><a href="#">RV Dlear</a></li>
+          <li class="active">RV Floor Plan Types. Michigan RV Dealer Lakeshore RV</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="title_wrapper">
+      <div class="container">
+          <div class="title_block">
+              <h1>RV Floor Plan Types</h1>
+          </div>
+      </div>
+  </div>
+  <div class="content_wrapper">
+      <div class="container">
+          <div class="banner_img">
+              <img ng-src="{{demo.imgPath + 'LSRV-Floor-Plans-Banner-1.png'}}" alt="img" class="img-responsive">
+          </div>
+          <div class="demo_content">
+              <p>{{demo.textData.para1}}</p>
+              <p>{{demo.textData.para2}}</p>
+          </div>
+          <div class="plan_info">
+              <ul>
+                  <li ng-repeat="plan in demo.planDetails"><a href="#"><h2>{{plan.plan_title}}</h2></a> <span>({{plan.plan_no}})</span></li>
+              </ul>
+          </div>
+           <div class="demo_content">
+              <p>{{demo.textData.para3}}</p>
+          </div>
+      </div>
+  </div>
+</div>

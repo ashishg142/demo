@@ -1,0 +1,62 @@
+<footer class="footer_sec" id="footer">
+  <div class="footer_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <nav class="footer_links">
+            <ul>
+              <li ng-repeat="menu in fc.menuItems">
+                <a ui-sref="{{menu.sref}}" title="{{menu.name}}">{{menu.name}}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-sm-4">
+          <div class="footer_search_form">
+            <search-form></search-form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+            <div class="footer_bottom_left">
+              <div class="address">
+                <p>
+                  <span>{{fc.addressData.title}}</span>,
+                  <span>{{fc.addressData.address_line1}}</span>,
+                  <span>{{fc.addressData.city}}</span>,
+                  <span>{{fc.addressData.state}}</span>
+                  <span>{{fc.addressData.zip_code}}</span>,
+                  <span>{{fc.addressData.country}}</span>
+                </p>
+                <p>
+                  Phone: <span>{{fc.addressData.phone}}</span>  
+                  Secondary phone: <span>{{fc.addressData.secondry_phone}}</span>
+                  Fax: <span>{{fc.addressData.fax}}</span>
+                </p>
+              </div>
+              <nav class="footer_bottom_links">
+                <ul>
+                  <li ng-repeat="links in fc.footerlinks">
+                    <a ui-sref="links.sref" title="link.name">{{links.name}}</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="copy_right_text">
+                <p>{{fc.copyright}}</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="footer_social_links">
+             <social-links></social-links>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <h1>Error Log</h1>
+    <hr>
+    <div class="form-inline">
+        <label>App</label>: <select name="app" class="form-control" ng-model="apps.app" ng-options="app as app.app for app in errors.apps track by app.appid" ng-change="errors.refresh(apps.app)"></select>
+    </div>
+    <br />
+    <img-table table-data="errors.errors" table-options="errors.tableOptions"></img-table>
+
+    <side-view ng-class="errors.sideViewStateClass" show="errors.showSideView" toggle-show="errors.showError()"></side-view>
+</div>

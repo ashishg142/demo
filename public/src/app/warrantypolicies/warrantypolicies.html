@@ -1,0 +1,14 @@
+<div class="container-fluid row" style="height:1000px" sv-root sv-on-sort="warrantyPolicies.foo($item, $partFrom, $partTo, $indexFrom, $indexTo)">
+    <h1>Warranty Policies</h1>
+    <hr>
+
+    <img-table table-data="warrantyPolicies.warrantyPolicies" table-options="warrantyPolicies.tableOptions"></img-table>
+
+    <side-view ng-class="warrantyPolicies.sideViewStateClass" show="warrantyPolicies.showSideView" toggle-show="warrantyPolicies.toggleWarrantyPolicyForm()"></side-view>
+
+    <div class="fixed-action-btn" ng-click="warrantyPolicies.toggleWarrantyPolicyForm()">
+        <a>
+            <i class="glyphicon glyphicon-plus"></i>
+        </a>
+    </div>
+</div>

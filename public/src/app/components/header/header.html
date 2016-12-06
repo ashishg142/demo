@@ -1,0 +1,43 @@
+<header class="header_sec">
+  <div class="header_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="logo">
+            <img ng-src="{{hc.imgPath + 'Lakeshore-RV-Center-Logo.png'}}" alt="img" class="img-responsive">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="contact_no">
+            <h3>231-683-4543</h3>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <search-form></search-form>
+        </div>
+        <div class="col-sm-3">
+          <social-links></social-links>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="main_nav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ManiNav" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="ManiNav">
+        <ul class="nav navbar-nav">
+          <li ng-repeat="menu in hc.menuItems">
+              <a ui-sref="{{menu.sref}}" title="{{menu.name}}">{{menu.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,16 @@
+.footer_sec{ background-color:$header-bg}
+.footer_links ul{ list-style: none; margin: 0; padding: 0;}
+.footer_links ul li{ display: inline-block; vertical-align: middle}
+.footer_links ul li a{ display: block; padding: 10px; color: $white}
+.footer_top{ padding: 15px 0 25px}
+.footer_bottom{ color: $white}
+.footer_bottom_links ul li {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+.footer_bottom_links ul li a{ color: $white; text-decoration: underline;}
+.footer_bottom_left {
+    text-align: center;
+    font-size: 12px;
+}

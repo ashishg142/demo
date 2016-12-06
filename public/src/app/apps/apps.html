@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h1>Application Listing</h1>
+    <hr>
+    <img-table table-data="apps.apps" table-options="apps.tableOptions"></img-table>
+
+    <side-view ng-class="apps.sideViewStateClass" show="apps.showSideView" toggle-show="apps.showApp()"></side-view>
+
+    <div class="fixed-action-btn" ng-click="apps.showApp()">
+        <a>
+            <i class="glyphicon glyphicon-plus"></i>
+        </a>
+    </div>
+</div>

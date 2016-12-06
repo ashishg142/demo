@@ -1,0 +1,164 @@
+$sidebar-bg: #5e5e5e;
+$sidebar-fg: #c5c5c5;
+$sidebar-border-color: #A7A5A5;
+$sidebar-active-bg: $color-primary;
+
+.sidebar {
+  background: $sidebar-bg;
+  border-right: 1px solid $sidebar-border-color;
+  display: table-cell;
+  height: 100%;
+  position: fixed;
+  vertical-align: top;
+  width: $sidebar-width;
+  @include transition(all .3s ease-in-out);
+  white-space: nowrap;
+  z-index: 199;
+
+  nav {
+    position: relative;
+    height: 100%;
+
+    a:link, a:visited {
+      color: $sidebar-fg;
+      text-decoration: none;
+    }
+
+    .collapser {
+      color: $sidebar-fg;
+      position: absolute;
+      bottom: 0;
+      left: 45%;
+      font-variant: small-caps;
+      font-size: 1.5em;
+    }
+
+    .logo-container {
+      background: $sidebar-bg;
+      border-bottom: 1px solid $sidebar-border-color;
+      border-right: 1px solid $sidebar-border-color;
+      height: 100px;
+      line-height: 100px;
+      width: $sidebar-width;
+      text-align: center;
+      @include transition(all .3s ease-in-out);
+    }
+
+    .logo {
+      background: transparent url("/assets/images/img-logo.png") no-repeat left center;
+      display: inline-block;
+      height: 50px;
+      position: relative;
+      top: 20px;
+      width: 51px;
+      @include transition(all .3s ease-in-out);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      li {
+        line-height: 40px;
+        list-style-type: none;
+        padding-top: 10px;
+        text-align: left;
+        height: 60px;
+        min-height: 60px;
+        position: relative;
+        @include transition(all .3s ease-in-out);
+
+        i.fa, i.glyphicon {
+          color: $sidebar-fg;
+          font-size: 1.8em;
+          margin-right: 10px;
+          width: 25px;
+          @include transition(all .3s ease-in-out);
+        }
+
+        i.glyphicon-triangle-left {
+          color: #fff;
+          display: none;
+          position: absolute;
+          top: 18px;
+          right: -13px;
+          font-size: 2.2em !important;
+          @include transition(all .3s ease-in-out);
+        }
+
+        a {
+          position: relative;
+          left: 20px;
+          @include transition(all .3s ease-in-out);
+        }
+
+        span.text {
+          opacity: 1;
+          font-variant: small-caps;
+          font-size: 1.5em;
+          @include transition(all .3s ease-in-out);
+        }
+      }
+
+      li.active {
+        background: $sidebar-active-bg;
+
+        a:link, a:visited {
+          color: #fff;
+        }
+
+        i.fa, i.glyphicon {
+          color: #fff;
+        }
+      }
+
+      li.active:hover {
+        background: $sidebar-active-bg;
+      }
+
+      li:hover {
+        background: #424242;
+
+        a:link, a:visited {
+          color: #fff;
+        }
+
+        i.fa, i.glyphicon {
+          color: #fff;
+        }
+      }
+
+      li.active {
+        i.glyphicon-triangle-left {
+          display: block;
+        }
+      }
+
+      li:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}
+
+.no-sidebar .sidebar {
+  display: none;
+}
+
+.compact .sidebar, .compact .sidebar nav .logo-container {
+  width: 70px;
+
+  nav ul li {
+    i.glyphicon-triangle-left {
+      top: 23px;
+      right: -24px;
+      font-size: 1.1em !important;
+    }
+  }
+
+  span.text {
+    opacity: 0;
+    display: none;
+  }
+}

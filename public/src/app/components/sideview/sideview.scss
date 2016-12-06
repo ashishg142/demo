@@ -1,0 +1,28 @@
+.side-view {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: #000;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  opacity: .5;
+}
+
+.side-view-content {
+  background: #FFF;
+  height: 100%;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width:50%;
+  z-index: 1001;
+  overflow-y: scroll;
+}
+
+/* when hiding the picture */
+.side-view-content.ng-hide-add         { animation:0.5s slideOutRight ease; }
+
+/* when showing the picture */
+.side-view-content.ng-hide-remove      { animation:0.5s slideInRight ease; }

@@ -1,0 +1,10 @@
+<div class="form-group" ng-class="{ 'has-error' : vm.form[vm.fieldId].$invalid && vm.submitted}">
+    <label>{{vm.label}}: </label>
+    <input type="number" class="form-control" name="{{vm.fieldId}}" ng-model="vm.model[vm.fieldId]"
+           ng-required="vm.required"/>
+    <p ng-show="vm.form[vm.fieldId].$invalid && vm.submitted " class="help-block">{{vm.label}} is required.</p>
+    <p ng-if="vm.minLength" ng-show="vm.form[vm.fieldId].$error.minlength && vm.submitted " class="help-block">
+        {{vm.label}} must be at least {{vm.minLength}} characters.</p>
+    <p ng-if="vm.maxLength" ng-show="vm.form[vm.fieldId].$error.maxlength && vm.submitted " class="help-block">
+        {{vm.label}} must not be more than {{vm.maxLength}} characters.</p>
+</div>

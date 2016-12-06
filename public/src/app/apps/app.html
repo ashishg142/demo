@@ -1,0 +1,17 @@
+<h2>Application Entry</h2>
+<hr />
+<form id="appForm" name="appForm" class="form" novalidate>
+    <div class="row">
+        <div class="col-md-12">
+            <text-field text-field-form="appForm" text-field-id="app" text-field-label="App Name" text-field-submitted="app.submitted" text-field-model="app.app" text-field-required="true"></text-field>
+            <select-field select-field-form="appForm" select-field-id="external" select-field-label="External" select-field-data="app.externalSelections" select-field-submitted="app.submitted" select-field-model="app.app" select-field-required="false"></select-field>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 col-md-push-6 action-buttons">
+            <button type="submit" class="btn btn-primary pull-right" ng-click="app.save(appForm.$valid)">Save</button>
+            <button class="btn btn-default pull-right" ng-click="app.cancel()">Cancel</button>
+        </div>
+    </div>
+</form>

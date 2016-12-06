@@ -1,0 +1,13 @@
+<div class="form-group date-picker" ng-class="{ 'has-error' : vm.form[vm.fieldId].$invalid && vm.submitted}">
+    <p class="input-group">
+        <label>{{vm.label}}: </label>
+        <input type="text" class="form-control" uib-datepicker-popup="{{vm.format}}" name="{{vm.fieldId}}" ng-model="vm.model[vm.fieldId]" ng-required="vm.required"
+               is-open="vm.popup1.opened" datepicker-options="vm.dateOptions" close-text="Close" alt-input-formats="vm.altInputFormats"/>
+        <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="vm.open1()">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+        </span>
+    </p>
+    <p ng-show="vm.form[vm.fieldId].$invalid && vm.submitted " class="help-block">{{vm.label}} is required.</p>
+</div>

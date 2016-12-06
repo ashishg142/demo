@@ -1,0 +1,16 @@
+<div class="row" id="metaBoxes">
+    <div class="col-md-{{adminSectionManager.colSize}} multi-multi-sortable ng-scope"
+         ng-repeat="col in adminSectionManager.children track by $index">
+        <div class="sortable-container" sv-root="metaBoxes" sv-on-sort="adminSectionManager.onSort()"
+             sv-part="adminSectionManager.children[$index]">
+            <uib-accordion>
+                <div ng-repeat="row in col track by $index" uib-accordion-group
+                     class="panel-default multi ng-scope ng-binding"
+                     heading="{{row.admin_section}}" sv-element>
+                </div>
+            </uib-accordion>
+        </div>
+    </div>
+</div>
+<script>
+</script>

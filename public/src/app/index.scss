@@ -1,0 +1,143 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$color-primary: #3498db;
+$navbar-inverse-link-color: #FFF;
+$icon-font-path: "fonts/";
+$fa-font-path: "fonts/";
+
+$sidebar-bg: #5e5e5e;
+$sidebar-fg: #c5c5c5;
+$sidebar-border-color: #A7A5A5;
+$sidebar-active-bg: $color-primary;
+$fb-bg:#4D67A3;
+$insta-bg:#40719A;
+$pin-bg:#C62325;
+$google-bg:#D74936;
+$tw-bg:#25A7DF;
+$yt-bg:#CC171E;
+$nav-bg:#F96815;
+$nav-bg-hover:#CDCDC7;
+$black: #000;
+
+$header-bg:#333333;
+$white:#fff;
+
+$wrapper-bg:#CECEC7;
+$title-bg:#A3A39D;
+$title-text:#404040;
+
+/**
+ * App-Wide Variables
+ */
+$sidebar-width: 220px;
+
+/**
+ * Mix-Ins
+ */
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.action-buttons {
+  button {
+    margin-right: 10px;
+  }
+}
+
+.container, .container-fluid {
+  margin-left: $sidebar-width;
+  .jumbotron {
+    background: #000;
+    color: #FFF;
+  }
+  @include transition(all .3s ease-in-out);
+}
+
+.no-sidebar .container, .no-sidebar .container-fluid {
+  margin-left: 0;
+}
+
+.compact .container, .compact .container-fluid {
+  margin-left: 70px;
+}
+
+.break-word {
+  word-break: break-all;
+}
+
+.fixed-action-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 998;
+
+  a {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    padding: 0;
+    background-color: #3498db;
+    border-radius: 50%;
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+    vertical-align: middle;
+
+    &:hover {
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    i {
+      font-size: 2.4rem;
+      line-height: 55px;
+    }
+  }
+}
+.main_wrapper { margin-top: 120px;background-color: $wrapper-bg}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

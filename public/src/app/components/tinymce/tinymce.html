@@ -1,0 +1,5 @@
+<div class="form-group" ng-class="{ 'has-error' : vm.form[vm.fieldId].$invalid && vm.submitted}">
+    <label ng-if="vm.label && vm.label !== ''">{{vm.label}}: </label>
+    <textarea name="{{vm.fieldId}}" ui-tinymce="vm.options" ng-model="vm.model[vm.fieldId]" ng-required="vm.required"></textarea>
+    <p ng-show="vm.form[vm.fieldId].$invalid && vm.submitted " class="help-block">{{vm.label}} is required.</p>
+</div>
